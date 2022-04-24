@@ -1,3 +1,4 @@
+from password_generator import PasswordGenerator
 class Credentials:
     """
     Creates credentials account which takes account name,
@@ -41,4 +42,14 @@ class Credentials:
             dict: a collection of all the credentials the user has access to
         """
         return cls.password_vault
+    @staticmethod
+    def auto_generate_password(length):
+        """
+            Generates a new password using the auto generator
+        Args:
+            length (int): length of the password
+        """
+        return PasswordGenerator().non_duplicate_password(length)
+
+
 
