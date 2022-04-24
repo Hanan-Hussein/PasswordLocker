@@ -1,4 +1,6 @@
 from password_generator import PasswordGenerator
+
+
 class Credentials:
     """
     Creates credentials account which takes account name,
@@ -32,7 +34,7 @@ class Credentials:
             str: account name or the fail report
         """
         return cls.password_vault.pop(account_name, "The account does not exist")
-    
+
     @classmethod
     def display_credentials(cls):
         """
@@ -42,6 +44,7 @@ class Credentials:
             dict: a collection of all the credentials the user has access to
         """
         return cls.password_vault
+
     @staticmethod
     def auto_generate_password(length):
         """
@@ -50,6 +53,8 @@ class Credentials:
             length (int): length of the password
         """
         return PasswordGenerator().non_duplicate_password(length)
+
+
 class User:
     """
     creates a new user, and authenticates a user to the system
@@ -66,3 +71,7 @@ class User:
         self.local_username = local_username
         self.local_password = local_password
         User.local_credentials = (local_username, local_password)
+
+    @classmethod
+    def authenticate(cls, username, password):
+        pass
