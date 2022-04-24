@@ -63,3 +63,56 @@ if __name__ == "__main__":
             print()
             input("Press Enter To Go Back to Main Menu.....")
             print()
+                # Creation and saving of new credentials
+        if user_input == "2":
+            print()
+            account_name_2 = input("Enter Account name : ")
+            print()
+            username_2 = input("Enter Username : ")
+            print()
+            print("Do you want an auto generated password : \n")
+            for option, message in new_credentials_options.items():
+                print(f"{option:^30} {message:<30}")
+            print()
+            user_input = input(" : ").casefold()
+            if user_input == 'y':
+                user_input = input(
+                    " How long do you want the password to be ? : ")
+                user_password2 = Credentials.auto_generate_password(
+                    int(user_input))
+            elif user_input == 'n':
+                user_password2 = input("Input your own password : ")
+
+            Credentials(account_name_2, user_password2, username_2)
+            print("\u001b[32m",
+                  "\t\tCREDENTIAL SUCCESSFULLY SAVED", "\u001b[0m")
+
+            input("Press Enter To Go Back to Main Menu.....")
+            print()
+        # Storage of existing credentials
+        if user_input == "3":
+            print("Input the details below : ")
+            account_name_3 = input("ACCOUNT NAME : ")
+            user_username_3 = input("USERNAME : ")
+            user_password_3 = input("PASSWORD : ")
+            print()
+            Credentials(account_name_3, user_password_3, user_username_3)
+            print("\u001b[32m",
+                  "\t\tCREDENTIAL SUCCESSFULLY SAVED", "\u001b[0m")
+
+            input("Press Enter To Go Back to Main Menu.....")
+            print()
+        # Deletion of a credential
+        if user_input == "4":
+            print("Enter the account name you want to delete")
+            user_input = input(" : ")
+            deletion=Credentials.delete_credential(user_input)
+            if deletion == False:
+                print("\u001b[33m",
+                  f"\t\tThe account you are trying to delete does not exist", "\u001b[0m")
+            else:
+                print("\u001b[32m",
+                    f"\t\tThe {user_input} account has been deleted successfully", "\u001b[0m")
+
+            input("Press Enter To Go Back to Main Menu.....")
+            print()
