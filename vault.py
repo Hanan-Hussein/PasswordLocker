@@ -31,3 +31,14 @@ class Credentials:
             str: account name or the fail report
         """
         return cls.password_vault.pop(account_name, "The account does not exist")
+    
+    @classmethod
+    def display_credentials(cls):
+        """
+        Display all the credentials the user has access to
+
+        Returns:
+            dict: a collection of all the credentials the user has access to
+        """
+        return cls.password_vault
+
