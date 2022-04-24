@@ -18,3 +18,16 @@ class Credentials:
         self.password = password
         self.username = username
         Credentials.password_vault[account_name] = {username: password}
+
+    @classmethod
+    def delete_credential(cls, account_name):
+        """
+        Deletes a user by account name
+
+        Args:
+            account_name (str): The name of the account to be deleted
+
+        Returns:
+            str: account name or the fail report
+        """
+        return cls.password_vault.pop(account_name, "The account does not exist")
