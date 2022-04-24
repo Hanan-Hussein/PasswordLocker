@@ -13,7 +13,7 @@ if __name__ == "__main__":
     print()
     new_user = User(user_username, user_password)
     print("\u001b[32m","ACCOUNT SUCCESSFULLY CREATED","\u001b[0m")    
-    print()
+    print() 
     print("Login to Your Account :")
    
     while True:
@@ -24,9 +24,24 @@ if __name__ == "__main__":
         print()
         authentification = new_user.authenticate(user_username_verification, user_password_verification)
         if authentification:
-            print("\u001b[32m","SUCCESSFULL LOGIN","\u001b[0m")
+            print("\u001b[32m","SUCCESSFUL LOGIN","\u001b[0m")
             print()
             break
         else:
             print("\u001b[31m","WRONG CREDENTIALS\n","\u001b[0m")
         print("TRY AGAIN")
+     # Authentified user space
+    user_options = {
+        "0": "QUIT",
+        "1": "Display Saved Credentials",
+        "2": "Create New Credentials",
+        "3": "Store an existing credentials",
+        "4": "Delete a Credential"
+    }
+    new_credentials_options = {
+        "y": "Auto Generated Password",
+        "n": "Input Your Custom Password",
+        "0": "Quit"
+    }
+    user_input = None
+    main_menu_msg = "Main Menu "
