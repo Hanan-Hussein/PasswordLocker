@@ -50,6 +50,8 @@ class Credentials:
             length (int): length of the password
         """
         return PasswordGenerator().non_duplicate_password(length)
-
-
-
+class User:
+    """
+    creates a new user, and authenticates a user to the system
+    """
+    local_credentials = ()
