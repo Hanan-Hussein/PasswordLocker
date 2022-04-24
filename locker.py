@@ -45,3 +45,21 @@ if __name__ == "__main__":
     }
     user_input = None
     main_menu_msg = "Main Menu "
+    while user_input != "0":
+        # Main Menu
+        print(f"{main_menu_msg:^350}")
+        for option, message in user_options.items():
+            print(f"{option:^30} {message:<30}")
+        # Options
+        user_input = input(" : ")
+        # Display of available credentials
+        if user_input == "1":
+            account_name, username, password = "ACCOUNT NAME|", "USERNAME|", "PASSWORD|"
+            print(f"\t|{account_name:20} |{username:20} |{password:20}")
+            for i, j in Credentials.display_credentials().items():
+                for k, l in j.items():
+                    print()
+                    print(f"\t {i:20}  {k:20}  {l}")
+            print()
+            input("Press Enter To Go Back to Main Menu.....")
+            print()
