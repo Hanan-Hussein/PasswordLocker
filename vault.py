@@ -74,4 +74,10 @@ class User:
 
     @classmethod
     def authenticate(cls, username, password):
-        pass
+        """Authenticate user into the system
+
+        Args:
+            username (str): username to authenticate
+            password (str): password to authenticate
+        """
+       
