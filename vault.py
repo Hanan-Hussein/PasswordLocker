@@ -55,3 +55,14 @@ class User:
     creates a new user, and authenticates a user to the system
     """
     local_credentials = ()
+
+    def __init__(self, local_username, local_password):
+        """initialize user
+
+        Args:
+            password (str): user password 
+            username (str): username of the user
+        """
+        self.local_username = local_username
+        self.local_password = local_password
+        User.local_credentials = (local_username, local_password)
