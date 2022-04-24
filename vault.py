@@ -18,7 +18,6 @@ class Credentials:
         self.account_name = account_name
         self.password = password
         self.username = username
-        Credentials.password_vault[account_name] = {username: password}
 
     @classmethod
     def delete_credential(cls, account_name):
