@@ -1,4 +1,6 @@
+from cmd import PROMPT
 from vault import User, Credentials
+from getpass import getpass
 if __name__ == "__main__":
 
     bannner = "WELCOME TO PASSWORD LOCKER"
@@ -7,7 +9,7 @@ if __name__ == "__main__":
     print()
     user_username = input("USERNAME : ")
     print()
-    user_password = input("PASSWORD : ")
+    user_password = getpass(prompt="PASSWORD : ")
     print()
     new_user = User(user_username, user_password)
     print("\u001b[32m","ACCOUNT SUCCESSFULLY CREATED","\u001b[0m")    
@@ -18,7 +20,7 @@ if __name__ == "__main__":
         print()
         user_username_verification = input("USERNAME : ")
         print()
-        user_password_verification = input("PASSWORD : ")
+        user_password_verification = getpass(prompt="PASSWORD : ")
         print()
         authentification = new_user.authenticate(user_username_verification, user_password_verification)
         if authentification:
