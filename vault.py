@@ -80,4 +80,6 @@ class User:
             username (str): username to authenticate
             password (str): password to authenticate
         """
-       
+        if (username, password) == cls.local_credentials:
+            return True
+        return False
