@@ -122,3 +122,4 @@ if __name__ == "__main__":
                     f"""\t\tYou've left our system ....... See you sooon
                                     Made with  ♥️ HJ 
                     """, "\u001b[0m")
+        # bug upon pressing exit while choosing password type
