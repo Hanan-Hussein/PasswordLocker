@@ -12,23 +12,24 @@ if __name__ == "__main__":
     user_password = getpass(prompt="PASSWORD : ")
     print()
     new_user = User(user_username, user_password)
-    print("\u001b[32m","ACCOUNT SUCCESSFULLY CREATED","\u001b[0m")    
-    print() 
+    print("\u001b[32m", "ACCOUNT SUCCESSFULLY CREATED", "\u001b[0m")
+    print()
     print("Login to Your Account :")
-   
+
     while True:
         print()
         user_username_verification = input("USERNAME : ")
         print()
         user_password_verification = getpass(prompt="PASSWORD : ")
         print()
-        authentification = new_user.authenticate(user_username_verification, user_password_verification)
+        authentification = new_user.authenticate(
+            user_username_verification, user_password_verification)
         if authentification:
-            print("\u001b[32m","SUCCESSFUL LOGIN","\u001b[0m")
+            print("\u001b[32m", "SUCCESSFUL LOGIN", "\u001b[0m")
             print()
             break
         else:
-            print("\u001b[31m","WRONG CREDENTIALS\n","\u001b[0m")
+            print("\u001b[31m", "WRONG CREDENTIALS\n", "\u001b[0m")
         print("TRY AGAIN")
      # Authentified user space
     user_options = {
@@ -41,17 +42,22 @@ if __name__ == "__main__":
     new_credentials_options = {
         "y": "Auto Generated Password",
         "n": "Input Your Custom Password",
+        "m": "Back to Main Menu",
         "0": "Quit"
     }
     user_input = None
     main_menu_msg = "Main Menu "
     while user_input != "0":
         # Main Menu
-        print(f"{main_menu_msg:^350}")
+        print()
+
+        print(f"{main_menu_msg:^80}")
         for option, message in user_options.items():
             print(f"{option:^30} {message:<30}")
         # Options
-        user_input = input(" : ")
+        print()
+        user_input = input(" Choose an option : ")
+        print()
         # Display of available credentials
         if user_input == "1":
             account_name, username, password = "ACCOUNT NAME|", "USERNAME|", "PASSWORD|"
@@ -63,7 +69,7 @@ if __name__ == "__main__":
             print()
             input("Press Enter To Go Back to Main Menu.....")
             print()
-                # Creation and saving of new credentials
+            # Creation and saving of new credentials
         if user_input == "2":
             print()
             account_name_2 = input("Enter Account name : ")
@@ -80,12 +86,17 @@ if __name__ == "__main__":
                     " How long do you want the password to be ? : ")
                 user_password2 = Credentials.auto_generate_password(
                     int(user_input))
+                Credentials(account_name_2, user_password2, username_2)
+                print("\u001b[32m",
+                      "\t\tCREDENTIAL SUCCESSFULLY SAVED", "\u001b[0m")
             elif user_input == 'n':
                 user_password2 = input("Input your own password : ")
 
-            Credentials(account_name_2, user_password2, username_2)
-            print("\u001b[32m",
-                  "\t\tCREDENTIAL SUCCESSFULLY SAVED", "\u001b[0m")
+                Credentials(account_name_2, user_password2, username_2)
+                print("\u001b[32m",
+                      "\t\tCREDENTIAL SUCCESSFULLY SAVED", "\u001b[0m")
+            else:
+                continue
 
             input("Press Enter To Go Back to Main Menu.....")
             print()
@@ -106,20 +117,20 @@ if __name__ == "__main__":
         if user_input == "4":
             print("Enter the account name you want to delete")
             user_input = input(" : ")
-            deletion=Credentials.delete_credential(user_input)
+            deletion = Credentials.delete_credential(user_input)
             if deletion == False:
                 print("\u001b[33m",
-                  f"\t\tThe account you are trying to delete does not exist", "\u001b[0m")
+                      f"\t\tThe account you are trying to delete does not exist", "\u001b[0m")
             else:
                 print("\u001b[32m",
-                    f"\t\tThe {user_input} account has been deleted successfully", "\u001b[0m")
+                      f"\t\tThe {user_input} account has been deleted successfully", "\u001b[0m")
 
             input("Press Enter To Go Back to Main Menu.....")
             print()
     else:
         # Bye bye message
         print("\u001b[32m",
-                    f"""\t\tYou've left our system ....... See you sooon
-                                    Made with  ♥️ HJ 
+              f"""\t\tYou've left our system ....... See you sooon
+                                    Made with ♥️ HJ 
                     """, "\u001b[0m")
         # bug upon pressing exit while choosing password type
