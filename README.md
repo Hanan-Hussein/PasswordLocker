@@ -1,8 +1,7 @@
 # PasswordLocker
 <img width="1440" alt="Screenshot 2022-04-24 at 18 06 08" src="https://user-images.githubusercontent.com/36597096/164985572-a048a162-f351-44b1-88e4-8ffbd82754aa.png">
-# Contact-List
 
-Simple Python App that creates new contacts with properties. Touches on Test Driven Development using unittest (Python test framework).
+A simple password storage and generating app that runs on the terminal.
 
 ## Technologies Used
 
@@ -19,31 +18,59 @@ Simple Python App that creates new contacts with properties. Touches on Test Dri
 
 ## Behaviour Driven Development
 
-0. User Login
-   - OUTPUT : 
-1. Displays Saved Password the User
+0. Password Locker Account Creation
+   - OUTPUT : Create UserName and Password
+   - INPUT : New User Name and Password
+1. User Login
+   - OUTPUT : Login to Password Locker
+   - INPUT : User Password and Username
+2. Displays Saved Password the User
    - OUTPUT: "Display Saved Credentials"
    - INPUT: "1"
    - OUTPUT: List of the saved credentials 
-2. Create New Credentials
+3. Create New Credentials
    - OUTPUT: "Create a New Credential"
    - INPUT: "2"
    - OUTPUT: Options for the credentials 
-3. Password Choice
+4. Password Choice
    - INPUT: "y" 
    - OUTPUT: Auto generates password of a given length
    - INPUT: "n" 
    - OUTPUT: Gives the user a choice of a custom password 
-4. Store an Existing Credential
+5. Store an Existing Credential
    - INPUT: "3"
    - INPUT:  Input account name and password
    - OUTPUT: Success message
-5. Delete a Credential
+6. Delete a Credential
    - INPUT: "4"
    - INPUT:  Input account name of the account
    - OUTPUT: Success message
- 
+7. Quit
+   - INPUT : 0
+   - OUTPUT : Bye Bye Message and exit from the App
 
+## License
 
+MIT License
+
+Copyright (c) 2022 Hanan-Hussein
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
